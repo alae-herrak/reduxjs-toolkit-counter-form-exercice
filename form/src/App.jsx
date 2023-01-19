@@ -7,16 +7,47 @@ const App = () => {
   const infoPerson = useSelector((state) => state.infoPerson.infoPerson);
   const dispatch = useDispatch();
 
+  const handleForm = (e) => {
+    e.preventDefault();
+    let fullName = e.target[0].value;
+    let email = e.target[1].value;
+    let phoneNumber = e.target[2].value;
+    if (fullName != "" && email != "" && phoneNumber != "") {
+      dispatch(
+        saveInfo({
+          fullName: fullName,
+          email: email,
+          phoneNumber: phoneNumber,
+        })
+      );
+      dispatch(logIn());
+    }
+  };
+
   return (
     <div className="app">
       {isLogged ? (
         <div>
           <h3>Personal information:</h3>
-          <button onClick={() => dispatch(logOut())}>Logout</button>
+          <button
+            onClick={() => {
+              dispatch(resetInfo());
+              dispatch(logOut());
+            }}
+          >
+            Logout
+          </button>
         </div>
       ) : (
         <div>
-          <button onClick={() => dispatch(logIn())}>Login</button>
+          <div>
+            <form onSubmit={handleForm}>
+              <input type="text" placeholder="Full Name" />
+              <input type="text" placeholder="Email" />
+              <input type="text" placeholder="Phone Number" />
+              <input type="submit" value="Login" />
+            </form>
+          </div>
         </div>
       )}
     </div>

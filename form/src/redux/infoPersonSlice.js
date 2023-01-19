@@ -13,7 +13,7 @@ const infoPersonSlice = createSlice({
   reducers: {
     saveInfo: (state, action) => {
       state.infoPerson = {
-        fullName: action.payload.fullname,
+        fullName: action.payload.fullName,
         email: action.payload.email,
         phoneNumber: action.payload.phoneNumber,
       };
