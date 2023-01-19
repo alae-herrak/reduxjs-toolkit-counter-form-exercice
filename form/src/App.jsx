@@ -27,8 +27,22 @@ const App = () => {
   return (
     <div className="app">
       {isLogged ? (
-        <div>
-          <h3>Personal information:</h3>
+        <div className="container">
+          <h1>Personal information</h1>
+          <div>
+            <div className="row">
+              <div className="label">Full Name</div>
+              <div className="info">{infoPerson.fullName}</div>
+            </div>
+            <div className="row">
+              <div className="label">Email</div>
+              <div className="info">{infoPerson.email}</div>
+            </div>
+            <div className="row">
+              <div className="label">Phone Number</div>
+              <div className="info">{infoPerson.phoneNumber}</div>
+            </div>
+          </div>
           <button
             onClick={() => {
               dispatch(resetInfo());
@@ -39,15 +53,13 @@ const App = () => {
           </button>
         </div>
       ) : (
-        <div>
-          <div>
-            <form onSubmit={handleForm}>
-              <input type="text" placeholder="Full Name" />
-              <input type="text" placeholder="Email" />
-              <input type="text" placeholder="Phone Number" />
-              <input type="submit" value="Login" />
-            </form>
-          </div>
+        <div className="container">
+          <form onSubmit={handleForm}>
+            <input type="text" placeholder="Full Name" />
+            <input type="text" placeholder="Email" />
+            <input type="text" placeholder="Phone Number" />
+            <input type="submit" value="Login" />
+          </form>
         </div>
       )}
     </div>

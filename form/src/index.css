@@ -19,3 +19,75 @@
   box-sizing: border-box;
   margin: 0;
 }
+
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: #2e2e2e;
+  border: 3px dashed #979797;
+  border-radius: 10px;
+  height: 500px;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container > h1 {
+  margin-top: -70px;
+  margin-bottom: 70px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  margin: 1rem 0;
+  width: 300px;
+}
+
+.row > div {
+  width: 50%;
+}
+
+.row > .label {
+  font-style: italic;
+}
+
+.row > .info {
+  text-decoration: underline;
+}
+
+button {
+  margin-top: 70px;
+  margin-bottom: -70px;
+  width: 120px;
+  height: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  opacity: .85;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+form > input {
+  width: 200px;
+  height: 50px;
+  padding: .5rem 1rem;
+}
+form > input:last-child {
+  cursor: pointer;
+}
