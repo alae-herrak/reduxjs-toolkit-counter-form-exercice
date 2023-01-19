@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.app {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(158, 163, 240);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loggedIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid dashed;
+  border-radius: 10px;
+  height: 200px;
+  width: 400px;
+  background-color: rgb(212, 221, 224);
+}
+.loggedIn h3 {
+  font-size: 2rem;
+}
+.loggedIn div{
+  width: 100%;
+  text-align: center;
+}
+.loggedIn div button {
+  width: 28%;
+  height: 32px;
+  margin: 0 8px;
+  cursor: pointer;
+}
+.loggedIn button , .loggedOut button{
+  width: 64%;
+  height: 32px;
+  cursor: pointer;
+}
+.loggedOut {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 400px;
+}
